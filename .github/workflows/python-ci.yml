@@ -27,7 +27,7 @@ jobs:
 
     - name: Install PyAudio step 1
       run: |
-        sudo apt install portaudio19-dev python-pyaudio
+        sudo apt install portaudio19-dev python3-pyaudio
 
     - name: Install PyAudio step 2
       run: |
