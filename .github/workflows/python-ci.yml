@@ -28,6 +28,7 @@ jobs:
     - name: Install PyAudio
       run: |
         sudo apt-get install python3-pyaudio
+        pip install pyaudio
 
     - name: Run tests
       run: |
