@@ -1,2 +1,4 @@
 genai_processors
+pyaudio
+google-genai
 pytest
