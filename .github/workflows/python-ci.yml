@@ -25,9 +25,14 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+    - name: Install PyAudio
+      run: |
+        sudo apt-get install python-pyaudio
+
     - name: Run tests
       run: |
         if [ -f pytest.ini ] || [ -d tests ]; then pytest; fi
+        
     - name: Run the tool
       run: |
         python3 src/main.py
