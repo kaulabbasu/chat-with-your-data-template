@@ -30,4 +30,5 @@ jobs:
         if [ -f pytest.ini ] || [ -d tests ]; then pytest; fi
     - name: Run the tool
       run: |
+        python -m pip install --upgrade pyaudio genai-processors google-genai termcolor
         python3 src/main.py
