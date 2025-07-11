@@ -30,4 +30,4 @@ jobs:
         if [ -f pytest.ini ] || [ -d tests ]; then pytest; fi
     - name: Run the tool
       run: |
-        python3 ./main.py
+        python3 src/main.py
