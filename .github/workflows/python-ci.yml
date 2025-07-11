@@ -30,4 +30,4 @@ jobs:
         if [ -f pytest.ini ] || [ -d tests ]; then pytest; fi
     - name: Run the tool
       run: |
-        python3 ./realtime_simple_cli.py
+        python3 ./main.py
