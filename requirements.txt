@@ -1,6 +1,6 @@
+os
 pandas>=2.1.1
 pandasai
-os
 #genai_processors
 #google-genai
 pytest
