@@ -1,3 +1,6 @@
-genai_processors
-google-genai
+pandas
+pandasai
+os
+#genai_processors
+#google-genai
 pytest
