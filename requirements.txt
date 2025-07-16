@@ -3,3 +3,4 @@ pandasai
 #genai_processors
 #google-genai
 pytest
+PyYAML
