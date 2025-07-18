@@ -1,4 +1,7 @@
 pandas>=2.1.1
+torch
+openai
+transformers
 pandasai>=3.0.0b2
 lmstudio
 pandasai-local
