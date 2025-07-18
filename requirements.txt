@@ -1,4 +1,5 @@
-pandas>=2.1.1
+pandas==2.1.4
+numpy==1.26.4
 torch
 openai
 transformers
