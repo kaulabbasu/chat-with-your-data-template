@@ -1,5 +1,5 @@
 pandas>=2.1.1
-pandasai
+pandasai>=3.0.0b2
 lmstudio
 pandasai-local
 langchain-community
