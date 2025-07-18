@@ -2,6 +2,9 @@ import os
 import pandas as pd
 from pandasai import Agent
 from pandasai import SmartDataframe
+from langchain_community.llms import Ollama
+    
+llm = Ollama(model="llama3") # e.g., "mistral", "llama3"
 
 # Sample DataFrame
 sales_by_country = pd.DataFrame({
@@ -16,5 +19,6 @@ sales_by_country = pd.DataFrame({
 # agent = Agent(sales_by_country)
 # agent.chat('Which are the top 5 countries by sales?')
 
-df = SmartDataframe(sales_by_country)
-df.chat('Which are the top 5 countries by sales?')
+df = SmartDataframe(sales_by_country, config={"llm": llm})
+response = df.chat('Which are the top 5 countries by sales?')
+print(response)
