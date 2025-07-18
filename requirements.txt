@@ -1,5 +1,7 @@
 pandas>=2.1.1
 pandasai
+lmstudio
+pandasai-local
 langchain-community
 #genai_processors
 #google-genai
