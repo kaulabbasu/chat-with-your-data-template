@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from pandasai import Agent
 from pandasai import SmartDataframe
-from langchain_community.llms import Ollama
+# from langchain_community.llms import Ollama
 from pandasai.llm.local_llm import LocalLLM
     
 #llm = Ollama(model="llama3") # e.g., "mistral", "llama3"
