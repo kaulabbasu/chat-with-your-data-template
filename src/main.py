@@ -3,8 +3,11 @@ import pandas as pd
 from pandasai import Agent
 from pandasai import SmartDataframe
 from langchain_community.llms import Ollama
+from pandasai.llm.local_llm import LocalLLM
     
-llm = Ollama(model="llama3") # e.g., "mistral", "llama3"
+#llm = Ollama(model="llama3") # e.g., "mistral", "llama3"
+    
+llm = LocalLLM(api_base="http://localhost:1234/v1") # Adjust API base to your local model server
 
 # Sample DataFrame
 sales_by_country = pd.DataFrame({
