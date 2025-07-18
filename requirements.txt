@@ -1,5 +1,6 @@
 pandas>=2.1.1
 pandasai
+langchain-community
 #genai_processors
 #google-genai
 pytest
