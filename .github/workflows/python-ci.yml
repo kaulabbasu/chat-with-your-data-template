@@ -38,6 +38,9 @@ jobs:
 
     - name: Install dependencies
       run: |
+        python -m pip uninstall openai
+        python -m pip uninstall pandasai
+        python -m pip uninstall pandasai-openai
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
@@ -67,7 +70,7 @@ jobs:
 
     - name: Run the script
       run: |
-        python3 src/fun.py
+        python src/fun.py
                 
     # - name: Run the script
     #   run: |
