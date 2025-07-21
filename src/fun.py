@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
-from pandasai import SmartDataframe, PandasAI
+from pandasai import SmartDataframe
 from pandasai.llm.openai import OpenAI
 from pandasai.exceptions import MaliciousQueryError, NoResultFoundError
 
