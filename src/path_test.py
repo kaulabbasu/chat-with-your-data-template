@@ -41,4 +41,4 @@ except ModuleNotFoundError as e:
     print('2. A conflicting module or file named pandasai or llm is shadowing the real one.')
     print('3. The __init__.py files within the pandasai/llm/ directory structure are missing or corrupt.')
 except Exception as e:
-    print(f'An unexpected error occurred during LocalLLM import: {e}')"
+    print(f'An unexpected error occurred during LocalLLM import: {e}')
