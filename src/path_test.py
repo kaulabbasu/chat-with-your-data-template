@@ -3,7 +3,7 @@ import os
 
 print(f'Runtime Python Executable: {sys.executable}')
 print(f'Runtime sys.path: {sys.path}')
-print(f'Runtime PYTHONPATH: {os.environ.get('PYTHONPATH')}')
+print(f"Runtime PYTHONPATH: {os.environ.get('PYTHONPATH')}")
 
 try:
     import pandasai
