@@ -18,14 +18,14 @@ try:
         print('Contents of pandasai/llm directory:')
         # List contents of the pandasai/llm directory if possible
         try:
-  llm_dir = os.path.join(pandasai_path, 'llm')
-  if os.path.isdir(llm_dir):
-      for item in os.listdir(llm_dir):
-print(f'- {item}')
-  else:
-      print(f'{llm_dir} is not a directory.')
+          llm_dir = os.path.join(pandasai_path, 'llm')
+          if os.path.isdir(llm_dir):
+              for item in os.listdir(llm_dir):
+        print(f'- {item}')
+          else:
+              print(f'{llm_dir} is not a directory.')
         except Exception as e:
-  print(f'Could not list llm directory: {e}')
+          print(f'Could not list llm directory: {e}')
 
 except ModuleNotFoundError as e:
     print(f'pandasai not found by the runtime interpreter: {e}')
