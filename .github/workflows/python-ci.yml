@@ -20,44 +20,58 @@ jobs:
       with:
         python-version: '3.11'
 
-    - name: Debug Python Environment
+    - name: Debug Python Environment and Installation Paths
+      id: debug_paths # Add an ID to reference its outputs
       run: |
-        echo "--- Python Executable ---"
-        which python
-        python --version
-        echo "--- sys.path ---"
-        python -c "import sys; print(sys.path)"
-        echo "--- pip version ---"
-        pip --version
+        PYTHON_EXEC=$(which python)
+        echo "PYTHON_EXEC=$PYTHON_EXEC" >> "$GITHUB_OUTPUT"
+        echo "Python executable: $PYTHON_EXEC"
+        echo "Python version: $(python --version)"
+        
+        # Determine the site-packages directory for this Python environment
+        PYTHON_SITE_PACKAGES=$(python -c "import site; print(site.getsitepackages()[0])")
+        echo "PYTHON_SITE_PACKAGES=$PYTHON_SITE_PACKAGES" >> "$GITHUB_OUTPUT"
+        echo "Expected site-packages location: $PYTHON_SITE_PACKAGES"
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        echo "--- Initial pip list (for this Python) ---"
+        pip list --verbose
 
-        echo "--- Installed Packages (after install) ---"
-        pip list
-
-    # - name: Clean and Install dependencies
+    # - name: Install dependencies
     #   run: |
-    #     echo "--- Attempting to uninstall any existing pandasai-local ---"
-    #     python -m pip uninstall pandasai-local -y || echo "pandasai-local not found or failed to uninstall (might be okay)"
-    #     echo "--- Attempting to uninstall any existing pandasai ---"
-    #     python -m pip uninstall pandasai -y || echo "pandasai not found or failed to uninstall (might be okay)"
-
-    #     # Upgrade pip to ensure the latest pip behaviors
     #     python -m pip install --upgrade pip
-
-    #     echo "--- Installing pandasai and pandasai-local ---"
-    #     # Using --no-cache-dir to prevent potentially corrupted cached wheels from being used
-    #     pip install --verbose --no-cache-dir "pandasai>=3.0.0b2" pandasai-local
+    #     if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     #     echo "--- Installed Packages (after install) ---"
     #     pip list
-    #     echo "--- Specific Package Details ---"
-    #     pip show pandasai
-    #     pip show pandasai-local
-    #     pip show openai
+
+    - name: Clean and Install dependencies (Forced Installation)
+      run: |
+        echo "--- Attempting to uninstall any existing pandasai-local ---"
+        python -m pip uninstall pandasai-local -y || echo "pandasai-local not found or failed to uninstall"
+        echo "--- Attempting to uninstall any existing pandasai ---"
+        python -m pip uninstall pandasai -y || echo "pandasai not found or failed to uninstall"
+
+        echo "--- Upgrading pip ---"
+        python -m pip install --upgrade pip
+
+        echo "--- Installing pandasai and pandasai-local (FORCED) ---"
+        # Explicitly install into the determined site-packages
+        # Using --target is usually for special cases where you manage PYTHONPATH manually
+        # but here we're doing it to ensure pip *puts* it where we expect.
+        # However, for a ModuleNotFoundError within site-packages, the simpler `pip install`
+        # should normally be sufficient when used with actions/setup-python.
+        # Let's try the `--target` approach *if the normal install keeps failing*.
+        # For now, let's stick to the best practice: `pip install` should automatically target the right place.
+
+        # The `pip install` should use the correct site-packages because setup-python makes it the default.
+        # If the files aren't physically appearing, this is usually due to download/extraction issue.
+        pip install --verbose --no-cache-dir "pandasai>=3.0.0b2" pandasai-local
+        
+        echo "--- Post-install verification ---"
+        pip list --verbose
+        pip show pandasai-local
+        pip show pandasai
+        pip show openai
              
     # - name: Install PyAudio step 1
     #   run: |
