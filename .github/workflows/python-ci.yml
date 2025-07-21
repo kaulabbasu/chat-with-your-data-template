@@ -38,6 +38,27 @@ jobs:
         echo "--- Installed Packages (after install) ---"
         pip list
 
+    - name: Clean and Install dependencies
+      run: |
+        echo "--- Attempting to uninstall any existing pandasai-local ---"
+        python -m pip uninstall pandasai-local -y || echo "pandasai-local not found or failed to uninstall (might be okay)"
+        echo "--- Attempting to uninstall any existing pandasai ---"
+        python -m pip uninstall pandasai -y || echo "pandasai not found or failed to uninstall (might be okay)"
+
+        # Upgrade pip to ensure the latest pip behaviors
+        python -m pip install --upgrade pip
+
+        echo "--- Installing pandasai and pandasai-local ---"
+        # Using --no-cache-dir to prevent potentially corrupted cached wheels from being used
+        pip install --verbose --no-cache-dir "pandasai>=3.0.0b2" pandasai-local
+
+        echo "--- Installed Packages (after install) ---"
+        pip list
+        echo "--- Specific Package Details ---"
+        pip show pandasai
+        pip show pandasai-local
+        pip show openai
+
     # - name: Install PyAudio step 1
     #   run: |
     #     sudo apt install portaudio19-dev python3-pyaudio
@@ -46,17 +67,17 @@ jobs:
     #   run: |
     #     pip install pyaudio
 
-    - name: Validate pandasai version
-      run: |
-        pip show pandasai
+    # - name: Validate pandasai version
+    #   run: |
+    #     pip show pandasai
 
-    - name: Validate pandasai-local version
-      run: |
-        pip show pandasai-local
+    # - name: Validate pandasai-local version
+    #   run: |
+    #     pip show pandasai-local
 
-    - name: Validate openai version
-      run: |
-        pip show openai
+    # - name: Validate openai version
+    #   run: |
+    #     pip show openai
                 
     - name: Run the script
       run: |
