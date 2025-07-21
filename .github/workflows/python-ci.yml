@@ -78,6 +78,10 @@ jobs:
     # - name: Validate openai version
     #   run: |
     #     pip show openai
+
+    - name: Run the script
+      run: |
+        python3 src/path_test.py
                 
     # - name: Run the script
     #   run: |
