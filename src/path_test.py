@@ -21,7 +21,7 @@ try:
           llm_dir = os.path.join(pandasai_path, 'llm')
           if os.path.isdir(llm_dir):
               for item in os.listdir(llm_dir):
-        print(f'- {item}')
+                print(f'- {item}')
           else:
               print(f'{llm_dir} is not a directory.')
         except Exception as e:
