@@ -1,7 +1,8 @@
-from pandasai.llm.local_llm import LocalLLM
 import streamlit as st
 import pandas as pd
-from pandasai import SmartDataframe
+import os
+from pandasai import SmartDataframe, PandasAI
+from pandasai.llm.openai import OpenAI
 from pandasai.exceptions import MaliciousQueryError, NoResultFoundError
 
 
@@ -9,6 +10,8 @@ model = LocalLLM(
     api_base="http://localhost:11434/v1",
     model="llama3"
 )
+
+st.title("pandas-ai streamlit interface")
 
 st.markdown("""
     <style>
