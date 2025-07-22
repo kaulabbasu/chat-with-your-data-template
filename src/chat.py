@@ -2,9 +2,11 @@ import pandas as pd
 import pandasai as pai
 from pandasai import SmartDataframe
 from pandasai_litellm.litellm import LiteLLM
+from pandasai_openai.openai import OpenAI
 
 # Initialize LiteLLM with your OpenAI model
-llm = LiteLLM(model="gpt-4.1-mini", api_key="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")
+##llm = LiteLLM(model="gpt-4.1-mini", api_key="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")
+llm = OpenAI("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")
 
 # Configure PandasAI to use this LLM
 pai.config.set({
