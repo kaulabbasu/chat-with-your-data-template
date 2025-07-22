@@ -1,3 +1,4 @@
+import pandas as pd
 import pandasai as pai
 from pandasai import SmartDataframe
 from pandasai_litellm.litellm import LiteLLM
@@ -11,7 +12,7 @@ pai.config.set({
 })
 
 # Sample DataFrame
-sales_by_country = pd.DataFrame({
+sales_by_country = pai.DataFrame({
     "country": ["United States", "United Kingdom", "France", "Germany", "Italy", "Spain", "Canada", "Australia", "Japan", "China"],
     "revenue": [5000, 3200, 2900, 4100, 2300, 2100, 2500, 2600, 4500, 7000]
 })
