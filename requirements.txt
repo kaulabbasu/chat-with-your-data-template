@@ -5,7 +5,7 @@ numpy==1.26.4
 #transformers
 pandasai>=3.0.0b2
 pandasai-litellm
-#pandasai-openai
+pandasai-openai
 #streamlit
 #pandasai-local
 #lmstudio
