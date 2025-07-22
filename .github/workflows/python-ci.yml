@@ -70,7 +70,7 @@ jobs:
 
     - name: Run the script
       run: |
-        python src/chat.py
+        python src/agent.py
                 
     # - name: Run the streamlit app
     #   run: |
