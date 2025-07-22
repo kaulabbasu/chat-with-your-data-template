@@ -2,25 +2,13 @@ import pandas as pd
 import pandasai as pai
 from pandasai import Agent, SmartDataframe
 
-employees_data = {
-    "EmployeeID": [1, 2, 3, 4, 5],
-    "Name": ["John", "Emma", "Liam", "Olivia", "William"],
-    "Department": ["HR", "Sales", "IT", "Marketing", "Finance"],
-}
+# Sample DataFrame
+sales_by_country = pai.DataFrame({
+    "country": ["United States", "United Kingdom", "France", "Germany", "Italy", "Spain", "Canada", "Australia", "Japan", "China"],
+    "revenue": [5000, 3200, 2900, 4100, 2300, 2100, 2500, 2600, 4500, 7000]
+})
 
-salaries_data = {
-    "EmployeeID": [1, 2, 3, 4, 5],
-    "Salary": [5000, 6000, 4500, 7000, 5500],
-}
-
-employees_df = SmartDataframe(employees_data)
-salaries_df = SmartDataframe(salaries_data)
-
-print(employees_df)
-print(salaries_df)
-
-# agent = Agent([employees_df, salaries_df], memory_size=10)
-
-# Chat with the agent
-response = salaries_df.chat("What is the highest salary?")
+df = SmartDataframe(sales_by_country)
+print(df)
+response = df.chat('Which are the top 5 countries by revenue?')
 print(response)
