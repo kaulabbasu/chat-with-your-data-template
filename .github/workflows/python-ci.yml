@@ -36,6 +36,10 @@ jobs:
         echo "--- Initial pip list (for this Python) ---"
         pip list --verbose
 
+    - name: Install llama3
+      run: |
+        curl -fsSL https://ollama.com/install.sh | sh
+
     - name: Install dependencies
       run: |
         # python -m pip uninstall openai
