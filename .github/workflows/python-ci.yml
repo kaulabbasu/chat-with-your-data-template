@@ -43,7 +43,9 @@ jobs:
     - name: Install dependencies
       run: |
         # python -m pip uninstall openai
-        # python -m pip uninstall pandasai
+        python -m pip uninstall pandas
+        python -m pip uninstall pandasai
+        python -m pip uninstall streamlit
         # python -m pip uninstall pandasai-openai
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
@@ -74,11 +76,11 @@ jobs:
 
     - name: Run the script
       run: |
-        python src/conversation.py
+        python src/sample.py
                 
-    # - name: Run the streamlit app
-    #   run: |
-    #     streamlit run src/fun.py
+    - name: Run the streamlit app
+      run: |
+        streamlit run src/sample.py
         
     - name: Run tests
       run: |
