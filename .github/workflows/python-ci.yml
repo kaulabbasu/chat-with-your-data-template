@@ -39,7 +39,7 @@ jobs:
     - name: Install ollama
       run: |
         #curl -fsSL https://ollama.com/install.sh | sh
-        systemctl start ollama.service
+        #systemctl start ollama.service
 
     - name: run llama3
       run: |
