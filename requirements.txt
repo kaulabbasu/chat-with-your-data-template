@@ -4,12 +4,12 @@ numpy==1.26.4
 #openai
 #transformers
 pandasai>=3.0.0b2
-pandasai-litellm
-pandasai-openai
+#pandasai-litellm
+#pandasai-openai
 #streamlit
 #pandasai-local
 #lmstudio
-#langchain-community
+langchain-community
 #genai_processors
 #google-genai
 pytest
