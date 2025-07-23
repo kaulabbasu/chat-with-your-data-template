@@ -36,16 +36,19 @@ jobs:
         echo "--- Initial pip list (for this Python) ---"
         pip list --verbose
 
-    - name: Install llama3
+    - name: Install ollama
       run: |
         curl -fsSL https://ollama.com/install.sh | sh
 
+    - name: run llama3
+      run: |
+        ollama run llama3
+
     - name: Install dependencies
       run: |
-        python -m pip uninstall openai
-        python -m pip uninstall numpy
-        python -m pip uninstall pandas
         python -m pip uninstall pandasai
+        python -m pip uninstall numpy
+        python -m pip uninstall pandas     
         python -m pip uninstall streamlit
         # python -m pip uninstall pandasai-openai
         python -m pip install --upgrade pip
