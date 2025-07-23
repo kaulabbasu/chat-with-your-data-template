@@ -42,7 +42,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        # python -m pip uninstall openai
+        python -m pip uninstall openai
+        python -m pip uninstall numpy
         python -m pip uninstall pandas
         python -m pip uninstall pandasai
         python -m pip uninstall streamlit
