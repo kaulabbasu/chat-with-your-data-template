@@ -38,7 +38,8 @@ jobs:
 
     - name: Install ollama
       run: |
-        curl -fsSL https://ollama.com/install.sh | sh
+        #curl -fsSL https://ollama.com/install.sh | sh
+        systemctl start ollama.service
 
     - name: run llama3
       run: |
@@ -89,3 +90,7 @@ jobs:
     - name: Run tests
       run: |
         if [ -f pytest.ini ] || [ -d tests ]; then pytest; fi
+
+    - name: Stop Ollama
+      run: |
+        systemctl stop ollama.service
