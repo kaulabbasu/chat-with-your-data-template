@@ -11,12 +11,14 @@ print(data)
 
 llm = Ollama(model="mistral")
 
+print(type(llm))
+
 # pai.config.set({
 #     "llm": llm
 # })
 
-df = SmartDataframe(data, config={"llm": llm})
+# df = SmartDataframe(data, config={"llm": llm})
 
-response = df.chat('Which are the top 5 countries by revenue?')
-print(response)
+# response = df.chat('Which are the top 5 countries by revenue?')
+# print(response)
 
