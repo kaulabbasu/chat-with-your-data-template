@@ -91,6 +91,6 @@ jobs:
       run: |
         if [ -f pytest.ini ] || [ -d tests ]; then pytest; fi
 
-    - name: Stop Ollama
-      run: |
-        systemctl stop ollama.service
+    # - name: Stop Ollama
+    #   run: |
+    #     systemctl stop ollama.service
