@@ -10,7 +10,11 @@ data = pai.DataFrame({
 
 llm = Ollama(model="mistral")
 
-df = SmartDataframe(data, config={"llm": llm})
+pai.config.set({
+    "llm": llm
+})
+
+df = SmartDataframe(data)
 
 response = df.chat('Which are the top 5 countries by revenue?')
 print(response)
