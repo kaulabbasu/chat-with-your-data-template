@@ -12,7 +12,7 @@ sales_by_country = pai.DataFrame({
 
 # llm = LiteLLM(model="lm_studio/llama-3-8b-instruct", api_base="http://localhost:1234/v1")
 # llm = CustOpenAI(api_base= "http://127.0.0.1:1234/v1", model_name = "local-model")
-llm = LiteLLM(model="local-model", api_base="http://localhost:1234/v1")
+llm = LiteLLM(model="ollama/llama2", api_base="http://localhost:11434")
 
 df = SmartDataframe(sales_by_country, config={"llm": llm})
 #print(df)
