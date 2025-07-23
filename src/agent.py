@@ -2,7 +2,7 @@ import pandas as pd
 import pandasai as pai
 from pandasai_litellm.litellm import LiteLLM
 from pandasai import Agent, SmartDataframe
-from pandasai.llm import CustOpenAI
+# from pandasai.llm import CustOpenAI
 
 # Sample DataFrame
 sales_by_country = pai.DataFrame({
@@ -11,7 +11,8 @@ sales_by_country = pai.DataFrame({
 })
 
 # llm = LiteLLM(model="lm_studio/llama-3-8b-instruct", api_base="http://localhost:1234/v1")
-llm = CustOpenAI(api_base= "http://127.0.0.1:1234/v1", model_name = "local-model")
+# llm = CustOpenAI(api_base= "http://127.0.0.1:1234/v1", model_name = "local-model")
+llm = LiteLLM(model="local-model", api_base="http://localhost:1234/v1")
 
 df = SmartDataframe(sales_by_country, config={"llm": llm})
 #print(df)
