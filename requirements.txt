@@ -1,5 +1,6 @@
 #pandas==2.1.4
 pandas
+numpy
 pandasai
 #numpy==1.26.4
 #torch
