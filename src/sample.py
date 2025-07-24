@@ -14,6 +14,7 @@ model = LocalLLM(
 # csv_file_path = "Titanic-Dataset.csv"
 # data = pd.read_csv(csv_file_path)
 # print("First 3 rows of the Titanic dataset:\n", data.head(3))
+print("this is a test")
 st.title("Data analysis with PandasAI")
 uploaded_file= st.file_uploader("Upload a file",type=['csv'])
 
