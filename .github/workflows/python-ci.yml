@@ -41,9 +41,9 @@ jobs:
         curl -fsSL https://ollama.com/install.sh | sh
         #systemctl start ollama.service
 
-    # - name: run llama3
-    #   run: |
-    #     ollama run llama3
+    - name: run llama3
+      run: |
+        ollama run llama3
 
     - name: Install dependencies
       run: |
@@ -83,14 +83,14 @@ jobs:
       run: |
         python src/sample.py
                 
-    - name: Run the streamlit app
-      run: |
-        streamlit run src/sample.py
+    # - name: Run the streamlit app
+    #   run: |
+    #     streamlit run src/sample.py
         
     - name: Run tests
       run: |
         if [ -f pytest.ini ] || [ -d tests ]; then pytest; fi
 
-    # - name: Stop Ollama
-    #   run: |
-    #     systemctl stop ollama.service
+    - name: stop llama3
+      run: |
+        ollama stop llama3
