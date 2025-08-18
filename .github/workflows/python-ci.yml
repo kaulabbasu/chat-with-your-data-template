@@ -58,27 +58,6 @@ jobs:
         echo "--- Installed Packages (after install) ---"
         pip list
 
-             
-    # - name: Install PyAudio step 1
-    #   run: |
-    #     sudo apt install portaudio19-dev python3-pyaudio
-
-    # - name: Install PyAudio step 2
-    #   run: |
-    #     pip install pyaudio
-
-    # - name: Validate pandasai version
-    #   run: |
-    #     pip show pandasai
-
-    # - name: Validate pandasai-local version
-    #   run: |
-    #     pip show pandasai-local
-
-    # - name: Validate openai version
-    #   run: |
-    #     pip show openai
-
     - name: Run the script
       run: |
         python src/sample.py
