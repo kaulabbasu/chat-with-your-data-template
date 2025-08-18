@@ -60,7 +60,7 @@ jobs:
 
     - name: Run the script
       run: |
-        python src/sample.py
+        python src/conversation.py
                 
     # - name: Run the streamlit app
     #   run: |
