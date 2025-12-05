@@ -13,7 +13,6 @@ Table of contents
 - Features
 - Prerequisites
 - Quick start (clone & run)
-- Configuration (credentials and environment)
 - Usage examples
 - Project structure
 - Development workflow
@@ -120,13 +119,11 @@ Security & best practices
 - Never commit service account JSON keys or API keys.
 - Use secret managers (GitHub Secrets) for CI/CD.
 - Validate and sanitize user inputs before sending them to a model.
-- Monitor usage and set budgets/quotas in GCP to avoid unexpected costs.
 - Implement safety checks on model responses (e.g., content filtering, rate limiting).
-- Maintain an audit trail of model calls and important decisions for compliance.
 
 Cost considerations
-- Generative AI models may incur substantial charges depending on usage, model choice, and response size.
-- Test with small inputs and monitor billing dashboards during experiments.
+- Generative AI models may incur substantial charges depending on usage, model choice, and response size. (In case of paid vrsions only)
+- Test with small inputs and monitor billing dashboards during experiments. (In case of paid vrsions only)
 
 Contributing
 Contributions are welcome. Please:
@@ -136,7 +133,7 @@ Contributions are welcome. Please:
 
 Suggested contribution checklist:
 - Add or update examples to demonstrate a concrete integration.
-- Improve docs with step-by-step setup for a given runtime (Python, Node).
+- Improve docs with step-by-step setup for a given runtime (Python).
 - Add test cases that mock GenAI responses and validate your parsing code.
 
 License
@@ -144,11 +141,10 @@ Specify a license for this template (e.g., MIT, Apache 2.0). Update this section
 
 Support / Contact
 - Open an issue in this repository for bugs, feature requests, or questions.
-- For implementation-specific questions about Google Generative AI, consult the official Google Cloud documentation: https://cloud.google.com/generative-ai
 
 Acknowledgements
-- This template draws on common patterns for working with cloud-based generative models and aims to simplify starting a new project.
+- This template draws on common patterns for working with conversational models and aims to simplify starting a new project.
 
 Next steps
 - Customize sections above with concrete instructions for your chosen runtime (install commands, sample code, required dependencies).
-- Consider adding example code files in /examples for Python and Node if you want runnable demonstrations.
+- Consider adding example code files in /examples for Python if you want runnable demonstrations.
