@@ -58,13 +58,19 @@ jobs:
         echo "--- Installed Packages (after install) ---"
         pip list
 
-    - name: Run the script
+    - name: Run the script for smartdataframe library
       run: |
-        python src/conversation.py
+        python src/smartdf_streamlit.py
+
+    - name: Run the script for agent library
+      run: |
+        python src/agent_streamlit.py
                 
-    # - name: Run the streamlit app
+    # - name: Run the streamlit apps in local
     #   run: |
-    #     streamlit run src/sample.py
+    #     python -m streamlit run src/smartdf_streamlit.py
+    #     python -m streamlit run src/agent_streamlit.py
+    
         
     - name: Run tests
       run: |
