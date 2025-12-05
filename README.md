@@ -64,12 +64,14 @@ Usage examples
 This template includes example text files that one can use for prompts from streamlit app:
 
 1. Agent app - (Talk to multiple datasets and retrieve/manufacture desired output)
-   <img width="578" height="270" alt="image" src="https://github.com/user-attachments/assets/2f5d718a-6958-4bd3-b6ad-092cbf0feb63" />
-   
+
+   **Upload multiple(with related entity, so that you get to talk to both the datasets simultaneously) datasets:**
    <img width="560" height="327" alt="image" src="https://github.com/user-attachments/assets/34c6658a-94dd-45c3-9c75-28fcb1d7846a" />
 
+   **First 5 records for both the datasets**
    <img width="454" height="285" alt="image" src="https://github.com/user-attachments/assets/e6dbfda7-2a34-4cc2-9c95-44f489f94cb0" />
 
+   **Start the conversation**
    <img width="479" height="164" alt="image" src="https://github.com/user-attachments/assets/b43a9652-907a-4705-9867-d35a6f56a770" />
 
    
