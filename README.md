@@ -1,2 +1,135 @@
 # genai-project-template
-A blueprint project for hands-on Google GenAI space
+
+A minimal, extensible blueprint for building projects that integrate with PandasAI and streamlit services. Use this template as a starting point for proof-of-concepts, demos, or production projects that leverage streamlit and conversational AI capabilities.
+
+Why this template exists
+- Provide a consistent project layout and developer workflow.
+- Document common setup steps and security considerations for working with data exploration with AI and Web App.
+- Make it easier to share and reproduce examples.
+
+Table of contents
+- Project overview
+- Features
+- Prerequisites
+- Quick start (clone & run)
+- Configuration (credentials and environment)
+- Usage examples
+- Project structure
+- Development workflow
+- Testing
+- CI / Deployment
+- Security & best practices
+- Contributing
+- License
+- Support / Contact
+
+Project overview
+This repository is a generic project scaffold for integrating Generative AI into an application. It is intentionally lightweight and language-agnostic so you can adapt it to Python, Node.js, or other stacks.
+
+Features
+- Opinionated project layout suitable for demos and prototypes
+- Guidance for setting up infrastructures for Ollama
+- Examples and placeholder files for model calls, request/response handling, and local testing
+- Guidance on CI and deployment for common environments
+
+Prerequisites
+- git and your preferred runtime (Python 3.10+) installed locally. (verify the library versions from the CI file)
+- Familiarity with environment variables and secrets management.
+- Familiarity with Pandas dataframes and streamlit
+
+Quick start (example)
+1. Clone the repo
+   git clone https://github.com/kaulabbasu/genai-project-template.git
+   cd genai-project-template
+
+2. Choose a runtime (examples below show Python)
+   - Python (example)
+     python -m venv .venv
+     source .venv/bin/activate
+     pip install -r requirements.txt
+
+3. Install Ollama in local system
+    https://ollama.com/download
+
+4. Have a Python IDE installed (preferred VSCode)
+5. Run the programs
+     a. Smartdataframe (single dataframe operation) :
+         python -m streamlit run smartdf_streamlit.py
+
+     b. Agent (multi dataframe operation) :
+         python -m streamlit run agent_streamlit.py
+
+
+Usage examples
+This template includes example text files that one can use for prompts from streamlit app:
+1. SmartDF app- Refer the example doc file
+2. Agent app- Refer the example doc file
+
+Project structure (recommended)
+- /examples                 # runnable examples that call GenAI APIs
+- /src or /app              # application source code
+- /tests                    # unit and integration tests
+- /.github/workflows        # CI workflows (lint, test, build)
+- /docs                     # additional documentation and design notes
+- README.md                 # this file
+- LICENSE
+
+Development workflow
+1. Create a feature branch from main.
+2. Implement your changes and add tests.
+3. Run unit tests and linters locally.
+4. Push the branch and open a pull request.
+5. CI will run automated checks; once green, request reviews and merge.
+
+Testing
+- Keep unit tests small and focused.
+- Use mocks for network calls (do not hit GenAI APIs in unit tests).
+- For integration tests, use a separate GCP project or service account and ensure costs/quotas are acceptable.
+- Add test cases for prompt formatting, response parsing, and safety/error handling.
+
+CI / Deployment
+- Add a workflow in .github/workflows to run linting, tests, and optionally a build step.
+- For deployments (Cloud Run, App Engine, GKE), prefer Workload Identity and avoid storing service account keys in the repo.
+- Example workflow steps:
+  - Checkout
+  - Set up runtime
+  - Install dependencies
+  - Run tests
+  - Build and deploy (conditional on branch or tag)
+
+Security & best practices
+- Never commit service account JSON keys or API keys.
+- Use secret managers (GitHub Secrets) for CI/CD.
+- Validate and sanitize user inputs before sending them to a model.
+- Monitor usage and set budgets/quotas in GCP to avoid unexpected costs.
+- Implement safety checks on model responses (e.g., content filtering, rate limiting).
+- Maintain an audit trail of model calls and important decisions for compliance.
+
+Cost considerations
+- Generative AI models may incur substantial charges depending on usage, model choice, and response size.
+- Test with small inputs and monitor billing dashboards during experiments.
+
+Contributing
+Contributions are welcome. Please:
+1. Fork the repository.
+2. Create a feature branch.
+3. Open a pull request with a clear description and test coverage.
+
+Suggested contribution checklist:
+- Add or update examples to demonstrate a concrete integration.
+- Improve docs with step-by-step setup for a given runtime (Python, Node).
+- Add test cases that mock GenAI responses and validate your parsing code.
+
+License
+Specify a license for this template (e.g., MIT, Apache 2.0). Update this section with the chosen license text or a reference to the LICENSE file.
+
+Support / Contact
+- Open an issue in this repository for bugs, feature requests, or questions.
+- For implementation-specific questions about Google Generative AI, consult the official Google Cloud documentation: https://cloud.google.com/generative-ai
+
+Acknowledgements
+- This template draws on common patterns for working with cloud-based generative models and aims to simplify starting a new project.
+
+Next steps
+- Customize sections above with concrete instructions for your chosen runtime (install commands, sample code, required dependencies).
+- Consider adding example code files in /examples for Python and Node if you want runnable demonstrations.
