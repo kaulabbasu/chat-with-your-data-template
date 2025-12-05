@@ -43,7 +43,6 @@ jobs:
 
     - name: run llama3
       run: |
-        ollama stop llama3
         ollama run llama3
 
     - name: Install dependencies
