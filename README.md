@@ -62,7 +62,7 @@ Quick start (example)
 
 
 Usage examples
-This template includes example text files that one can use for prompts from streamlit app:
+This template includes example text files that one can use as input datasets from streamlit app
 
 1. Agent app - (Talk to multiple datasets and retrieve/manufacture desired output)
 
@@ -76,7 +76,12 @@ This template includes example text files that one can use for prompts from stre
 
    Start the conversation
    
-   <img width="479" height="164" alt="image" src="https://github.com/user-attachments/assets/b43a9652-907a-4705-9867-d35a6f56a770" />   
+   <img width="479" height="164" alt="image" src="https://github.com/user-attachments/assets/b43a9652-907a-4705-9867-d35a6f56a770" />
+
+   The desired result
+
+   <img width="458" height="176" alt="image" src="https://github.com/user-attachments/assets/1b9f4758-89d8-4695-85c9-c3842fd85ab2" />
+
 
 
 Project structure (recommended)
