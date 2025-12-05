@@ -6,6 +6,7 @@ Why this template exists
 - Provide a consistent project layout and developer workflow.
 - Document common setup steps and security considerations for working with data exploration with AI and Web App.
 - Make it easier to share and reproduce examples.
+- Talk to your data (single or multiple datasets) easily instead of writing SQL queries
 
 Table of contents
 - Project overview
@@ -65,15 +66,15 @@ This template includes example text files that one can use for prompts from stre
 
 1. Agent app - (Talk to multiple datasets and retrieve/manufacture desired output)
 
-   **Upload multiple(with related entity, so that you get to talk to both the datasets simultaneously) datasets:**
+   Upload multiple(with related entity, so that you get to talk to both the datasets simultaneously) datasets:
    
    <img width="560" height="327" alt="image" src="https://github.com/user-attachments/assets/34c6658a-94dd-45c3-9c75-28fcb1d7846a" />
 
-   **First 5 records for both the datasets**
+   First 5 records for both the datasets
    
    <img width="454" height="285" alt="image" src="https://github.com/user-attachments/assets/e6dbfda7-2a34-4cc2-9c95-44f489f94cb0" />
 
-   **Start the conversation**
+   Start the conversation
    
    <img width="479" height="164" alt="image" src="https://github.com/user-attachments/assets/b43a9652-907a-4705-9867-d35a6f56a770" />   
 
