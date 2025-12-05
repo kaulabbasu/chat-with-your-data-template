@@ -1,0 +1,11 @@
+country,revenue,capital,currency,isEuropeanNation
+United States,5000,"Washington, D.C.",United States dollar,False
+United Kingdom,3200,London,Pound,True
+France,2900,Paris,Euro,True
+Germany,4100,Berlin,Euro,True
+Italy,2300,Rome,Euro,True
+Spain,2100,Madrid,Euro,True
+Canada,2500,Ottawa,Canadian Dollar,False
+Australia,2600,Canberra,Australian Dollar,False
+Japan,4500,Tokyo,Japanese Yen,False
+China,7000,Beijing,Chinese Yuan,False
