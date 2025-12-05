@@ -83,9 +83,9 @@ This template includes example text files that one can use as input datasets fro
 
 
 
-Project structure (recommended)
-- /examples                 # runnable examples that call GenAI APIs
-- /src or /app              # application source code
+Project structure
+- /data                     # sample files to test the apps
+- /src                      # source code
 - /tests                    # unit and integration tests
 - /.github/workflows        # CI workflows (lint, test, build)
 - /docs                     # additional documentation and design notes
