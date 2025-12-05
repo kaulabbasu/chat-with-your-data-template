@@ -14,7 +14,7 @@ model = LocalLLM(
 # csv_file_path = "Titanic-Dataset.csv"
 # data = pd.read_csv(csv_file_path)
 # print("First 3 rows of the Titanic dataset:\n", data.head(3))
-st.title("Data analysis with PandasAI")
+st.title("Data exploration with PandasAI and Streamlit")
 uploaded_file= st.file_uploader("Upload a file",type=['csv'])
 
 if uploaded_file is not None:
@@ -27,4 +27,5 @@ if uploaded_file is not None:
             
             with st.spinner("Generating response..."):
                 st.write(df.chat(prompt))
+
 
