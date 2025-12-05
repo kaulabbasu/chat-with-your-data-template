@@ -62,8 +62,12 @@ Quick start (example)
 
 Usage examples
 This template includes example text files that one can use for prompts from streamlit app:
+
 1. SmartDF app- Refer the example doc file
 2. Agent app- Refer the example doc file
+   <img width="578" height="270" alt="image" src="https://github.com/user-attachments/assets/2f5d718a-6958-4bd3-b6ad-092cbf0feb63" />
+   
+
 
 Project structure (recommended)
 - /examples                 # runnable examples that call GenAI APIs
