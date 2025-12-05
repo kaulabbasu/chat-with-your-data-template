@@ -1,4 +1,4 @@
-# genai-project-template
+# chat-with-your-data-template
 
 A minimal, open source, extensible blueprint for building projects that integrate with conversational AI (PandasAI for demo) and Web app(streamlit for demo) services. Use this template as a starting point for proof-of-concepts, demos, or production projects that leverage streamlit and conversational AI capabilities. We can incorporate paid OpenAI or similar versions for faster results but this utility is designed to act as a starting point and blueprint only.
 
