@@ -13,7 +13,7 @@ model = LocalLLM(
 
 config={"llm":model}
 
-st.title("Data analysis with PandasAI")
+st.title("Data exploration with PandasAI and Streamlit")
 uploaded_file= st.file_uploader("Upload a file",type=['csv'], key='first')
 uploaded_second_file= st.file_uploader("Upload a file",type=['csv'], key='second')
 
@@ -50,3 +50,4 @@ if uploaded_file is not None and uploaded_second_file is not None:
             break
         except Exception as e:
             print("An error occurred:", e)
+
